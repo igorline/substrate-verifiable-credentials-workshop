@@ -16,7 +16,7 @@ In this tutorial we will only be using 2 substrate specific types: `AccountId` &
 Our module does not natively have access to these types, but we can easily gain access by having our module's `Trait` inherit from the modules that defined these types. In this case the `system` and `timestamp` modules have everything we need:
 
 ```rust
-pub trait Trait: Trait: system::Trait + timestamp::Trait {}
+pub trait Trait: system::Trait + timestamp::Trait {}
 ```
 
 We can access these types anywhere we have specified the generic `<T: Trait>` using `T::Type` like we have done in the example above.
